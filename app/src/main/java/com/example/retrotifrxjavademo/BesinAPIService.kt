@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class BesinAPIService {
     // // URL https://raw.githubusercontent.com/atilsamancioglu/BTK20-JSONVeriSeti/master/besinler.json
 
-    private val baseURL = "https://raw.githubusercontent.com"
+    private val baseURL = "https://raw.githubusercontent.com/"
     private val api = Retrofit.Builder()
             .baseUrl(baseURL)
             .addConverterFactory(GsonConverterFactory.create())
