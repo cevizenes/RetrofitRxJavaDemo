@@ -29,21 +29,29 @@ class MainActivity : AppCompatActivity() {
 
 
         rv.setHasFixedSize(true)
-        rv.layoutManager = LinearLayoutManager(this)
-        rv.adapter  = rv_adapter
-
+        rv.layoutManager = LinearLayoutManager(this@MainActivity)
+        rv.adapter = rv_adapter
         observe()
+
+
+
     }
 
     private fun observe(){
-        viewmodel.foods.observe(this) { foods ->
+        viewmodel.foods.observe(this@MainActivity) { foods ->
             foods?.let {
                 rv_adapter.listOfUpdate(it)
+
             }
-        }
+
+
     }
 
 
-}
 
+
+
+
+}
+}
 

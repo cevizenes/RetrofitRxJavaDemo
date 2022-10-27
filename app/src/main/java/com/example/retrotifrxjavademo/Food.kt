@@ -5,7 +5,6 @@ import com.google.gson.annotations.SerializedName
 
 data class Food(
     @SerializedName("isim")
-    @Expose()
     var name : String?,
     @SerializedName("kalori")
     var calori: String?,
