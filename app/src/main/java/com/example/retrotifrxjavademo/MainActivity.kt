@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         this.viewmodel = hold
         hold.refreshData()
 
-
         rv.setHasFixedSize(true)
         rv.layoutManager = LinearLayoutManager(this@MainActivity)
         rv.adapter = rv_adapter
