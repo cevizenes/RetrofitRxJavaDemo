@@ -24,6 +24,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -60,6 +64,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
 
 
+    //noinspection LifecycleAnnotationProcessorWithJava8
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.5.1"
     //Coroutine
     implementation "androidx.room:room-ktx:2.4.3"
