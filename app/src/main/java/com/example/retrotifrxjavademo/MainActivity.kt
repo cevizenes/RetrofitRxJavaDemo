@@ -7,13 +7,14 @@ import android.os.Bundle
 import androidx.activity.viewModels
 
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.retrotifrxjavademo.databinding.ActivityMainBinding
 
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
-
+    private lateinit var  binding: ActivityMainBinding
     private lateinit var viewmodel : MainViewModel
     private val rv_adapter = rvAdapter(arrayListOf())
 
@@ -21,15 +22,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val hold : MainViewModel by viewModels()
         this.viewmodel = hold
         hold.refreshData()
 
-        rv.setHasFixedSize(true)
-        rv.layoutManager = LinearLayoutManager(this@MainActivity)
-        rv.adapter = rv_adapter
+        binding.rv.setHasFixedSize(true)
+        binding.rv.layoutManager = LinearLayoutManager(this@MainActivity)
+        binding.rv.adapter = rv_adapter
         observe()
 
 
